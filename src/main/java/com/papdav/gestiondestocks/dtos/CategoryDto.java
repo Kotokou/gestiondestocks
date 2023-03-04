@@ -1,5 +1,6 @@
 package com.papdav.gestiondestocks.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.papdav.gestiondestocks.models.Category;
 import lombok.Builder;
 import lombok.Data;
@@ -10,14 +11,12 @@ import java.util.List;
 public class CategoryDto {
 
     private  Integer id;
-
     private  String code;
-
     private String designation;
-
+    @JsonIgnore
     private List<ArticleDto> articles;
 
-    public CategoryDto fromEntity(Category category){
+    public static CategoryDto fromEntity(Category category){
         if(category == null) {
             return  null;
             // TODO throw Exception
@@ -29,15 +28,16 @@ public class CategoryDto {
                 .build();
     }
 
-    public Category toEntity(CategoryDto categoryDto){
+    public static Category toEntity(CategoryDto categoryDto){
         if(categoryDto == null){
             return  null;
             // TODO throw Exception
         }
-        return Category.builder()
-                .code(categoryDto.getCode())
-                .designation(categoryDto.getDesignation())
-                .build();
+        Category category = new Category();
+        category.setId(categoryDto.getId());
+        category.setCode(categoryDto.getCode());
+        category.setDesignation(categoryDto.getDesignation());
+        return category;
     }
 
 }

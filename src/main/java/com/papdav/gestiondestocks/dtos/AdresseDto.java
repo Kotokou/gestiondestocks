@@ -1,6 +1,6 @@
 package com.papdav.gestiondestocks.dtos;
 
-
+import com.papdav.gestiondestocks.models.Adresse;
 import lombok.Builder;
 import lombok.Data;
 
@@ -17,4 +17,34 @@ public class AdresseDto {
 
     private String pays;
 
+    public static AdresseDto fromEntity(Adresse adresse){
+        if(adresse == null) {
+            return null;
+            // TODO throw Exception
+        }
+        return AdresseDto.builder()
+                .adresse1(adresse.getAdresse1())
+                .adresse2(adresse.getAdresse2())
+                .pays(adresse.getPays())
+                .codePostale(adresse.getCodePostale())
+                .ville(adresse.getVille())
+                .build();
+
+    }
+
+    public static Adresse toEntity(AdresseDto adresseDto){
+        if(adresseDto == null) {
+            return null;
+            // TODO throw Exception
+        }
+        Adresse adresse = new Adresse();
+        adresse.setAdresse1(adresseDto.getAdresse1());
+        adresse.setAdresse2(adresseDto.getAdresse2());
+        adresse.setPays(adresseDto.getPays());
+        adresse.setVille(adresseDto.getVille());
+        adresse.setCodePostale(adresseDto.getCodePostale());
+        return adresse;
+    }
 }
+
+

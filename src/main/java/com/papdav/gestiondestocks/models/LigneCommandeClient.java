@@ -7,7 +7,6 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)

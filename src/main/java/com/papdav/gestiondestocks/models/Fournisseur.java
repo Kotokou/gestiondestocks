@@ -2,11 +2,9 @@ package com.papdav.gestiondestocks.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
