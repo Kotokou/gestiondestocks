@@ -2,17 +2,17 @@ package com.papdav.gestiondestocks.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Embeddable
-public class Adresse {
+public class Adresse implements Serializable {
 
     @Column(name = "adresse1")
     private String adresse1;
