@@ -14,6 +14,7 @@ public class UtilisateurValidator {
             errors.add("Vous devez renseigner le prenom de l'utilisateur");
             errors.add("Vous devez renseigner le mot de passe  de l'utilisateur");
             errors.add("Vous devez renseigner l'adresse de l'utilisateur");
+            return errors;
         }
 
         if(!StringUtils.hasLength(utilisateurDto.getNom())){
@@ -51,7 +52,6 @@ public class UtilisateurValidator {
                 errors.add("Vous devez renseigner le code postale de l'utilisateur");
             }
         }
-
         return errors;
     }
 }
