@@ -1,5 +1,6 @@
 package com.papdav.gestiondestocks.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.papdav.gestiondestocks.models.Roles;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.Data;
 public class RolesDto {
     private  Integer id;
     private String roleName;
+    @JsonIgnore
     private UtilisateurDto utilisateur;
 
     public static RolesDto fromEntity(Roles roles) {
@@ -20,7 +22,7 @@ public class RolesDto {
                 .builder()
                 .id(roles.getId())
                 .roleName(roles.getRoleName())
-                .utilisateur(UtilisateurDto.fromEntity(roles.getUtilisateur()))
+//                .utilisateur(UtilisateurDto.fromEntity(roles.getUtilisateur()))
                 .build();
     }
 
@@ -32,7 +34,7 @@ public class RolesDto {
         Roles roles = new Roles();
         roles.setId(rolesDto.getId());
         roles.setRoleName(rolesDto.getRoleName());
-        roles.setUtilisateur(UtilisateurDto.toEntity(rolesDto.getUtilisateur()));
+//        roles.setUtilisateur(UtilisateurDto.toEntity(rolesDto.getUtilisateur()));
         return roles;
     }
 }
