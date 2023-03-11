@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleValidator {
-    public List<String> validate(ArticleDto articleDto){
+    public static List<String> validate(ArticleDto articleDto){
         List<String> errors = new ArrayList<>();
 
         if(articleDto == null){

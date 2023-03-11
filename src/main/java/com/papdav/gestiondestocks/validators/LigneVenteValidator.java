@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LigneVenteValidator {
 
-    public List<String> validate(LigneVenteDto ligneVenteDto){
+    public static List<String> validate(LigneVenteDto ligneVenteDto){
         List<String> errors = new ArrayList<>();
 
         if(ligneVenteDto == null){

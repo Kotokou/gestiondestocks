@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CommandeFournisseurValidator {
 
-    public List<String> validate(CommandeFournisseurDto commandeFournisseurDto){
+    public static List<String> validate(CommandeFournisseurDto commandeFournisseurDto){
         List<String> errors = new ArrayList<>();
 
         if(commandeFournisseurDto == null){

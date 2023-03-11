@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MvtDeStockValidator {
 
-    public List<String> validate(MvtDeStockDto mvtDeStockDto){
+    public static List<String> validate(MvtDeStockDto mvtDeStockDto){
         List<String> errors = new ArrayList<>();
 
         if(mvtDeStockDto == null){

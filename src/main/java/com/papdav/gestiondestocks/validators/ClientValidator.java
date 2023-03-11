@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientValidator {
-    public List<String> validate(ClientDto clientDto){
+    public static List<String> validate(ClientDto clientDto){
         List<String> errors = new ArrayList<>();
 
         if(clientDto == null){

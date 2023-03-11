@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CommandeClientValidator {
 
-    public List<String> validate(CommandeClientDto commandeClientDto){
+    public static List<String> validate(CommandeClientDto commandeClientDto){
         List<String> errors = new ArrayList<>();
 
         if(commandeClientDto == null){

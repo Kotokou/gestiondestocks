@@ -7,7 +7,7 @@ import java.util.List;
 
 public class VenteValidator {
 
-    public List<String> validate(VenteDto venteDto){
+    public static List<String> validate(VenteDto venteDto){
         List<String> errors = new ArrayList<>();
 
         if(venteDto == null){
